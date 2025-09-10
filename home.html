@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+    <h2>User Details</h2>
+    <div id="userDetails"></div>
+    <script>
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                name: params.get('name'),
+                company: params.get('company'),
+                age: params.get('age')
+            };
+        }
+        const user = getQueryParams();
+        if (user.name && user.company && user.age) {
+            document.getElementById('userDetails').innerHTML =
+                '<p>Name: ' + user.name + '</p>' +
+                '<p>Company Name: ' + user.company + '</p>' +
+                '<p>Age: ' + user.age + '</p>';
+        } else {
+            document.getElementById('userDetails').innerHTML = '<p>No user details found. Please fill the form first.</p>';
+        }
+    </script>
+</body>
+</html>
