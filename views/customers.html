@@ -1,0 +1,14 @@
+<div>
+  <oj-form-layout>
+    <oj-input-text
+      label-hint="Name"
+      required="true"
+      value="{{name}}">
+    </oj-input-text>
+    <oj-button
+      disabled="[[!isFormValid()]]"
+      on-oj-action="[[submitForm]]">
+      Submit
+    </oj-button>
+  </oj-form-layout>
+</div>
